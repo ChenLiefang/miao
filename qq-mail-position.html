@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      /* box-sizing: border-box; */
+    }
+
+    div {
+      padding: 0;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      font-size: 0;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .a {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 100%;
+      height: 100px;
+      background-color: red;
+      border-bottom: 3px solid;
+    }
+
+    .b {
+      box-sizing: border-box;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 100px;
+      height: calc(100% - 100px);
+      width: 100px;
+      background-color: yellow;
+      /* border-top: solid; */
+    }
+
+    .c {
+      box-sizing: border-box;
+      display: inline-block;
+      position: absolute;
+      left: 100px;
+      top: 100px;
+      width: calc(100% - 100px);
+      height: calc(100% - 100px);
+      background-color: green;
+      /* border-top: solid; */
+      border-left: solid;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <span class="a"></span>
+    <span class="b"></span>
+    <span class="c"></span>
+  </div>
+</body>
+
+</html>
