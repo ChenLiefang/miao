@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    input {
+      display: none;
+    }
+
+    input+label {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border: 1px solid;
+      background-position: 0px 0px;
+      background-image:
+        url(https://miro.medium.com/max/5800/1*MTZW1G1mE7LSX1CnhTYeHA.png);
+    }
+
+    input:checked+label {
+      background-position: -2800px 0px;
+      transition: 1s steps(28);
+
+    }
+
+    main {
+      display: block;
+      width: 200px;
+      height: 100px;
+      background-color: rgb(182, 67, 67);
+      transition-property: width, height;
+      transition-duration: 1s, 1s;
+      transition-delay: 3s, 1s;
+
+    }
+
+    main:hover {
+      width: 400px;
+      height: 200px;
+      transition-delay: 1s, 3s;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" name="" id="up">
+  <label for="up"></label>
+  <main>wsws</main>
+</body>
+
+</html>
