@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    table {
+      box-sizing: border-box;
+      position: relative;
+      width: 210px;
+      height: 210px;
+      border-collapse: collapse;
+
+    }
+
+    th,
+    td,
+    tr {
+      box-sizing: border-box;
+      border: 3px solid blue;
+      text-align: center;
+    }
+
+    table tr :hover {
+      box-sizing: border-box;
+      border-color: red;
+      position: absolute;
+      width: 73px;
+      height: 73px;
+      margin-top: -3px;
+      margin-left: -3px;
+      line-height: 70px;
+    }
+
+    div.line {
+      margin-top: 20px;
+      margin-left: -20px;
+      width: 300px;
+      height: 300px;
+    }
+
+    ul {
+      list-style: none;
+      margin: -4px;
+    }
+
+    ul li {
+      display: inline-block;
+      border: 3px solid blue;
+      height: 70px;
+      width: 70px;
+      text-align: center;
+      line-height: 67px;
+      vertical-align: middle;
+      margin-left: -3px;
+      margin-right: -3px;
+    }
+
+    li:hover {
+      border: 3px solid red;
+      position: relative;
+    }
+  </style>
+</head>
+
+
+<body>
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table>
+  <div class="line">
+    <ul class="first">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <ul class="second">
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+    </ul>
+    <ul class="third">
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+    </ul>
+  </div>
+
+</body>
+
+</html>
