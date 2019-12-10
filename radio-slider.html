@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  </style>
+</head>
+<style>
+  section {
+    position: relative;
+    overflow: hidden;
+    width: 290px;
+    height: 110px;
+  }
+
+  img {
+    position: absolute;
+    width: 290px;
+    height: 110px;
+    left: 100%;
+  }
+
+  .left label::before {
+    content: '<';
+    background-color: gray;
+    line-height: 50px;
+    width: 25px;
+    position: absolute;
+  }
+
+  input[id="rd1"]:checked~.left label[for="rd5"]::before,
+  input[id="rd2"]:checked~.left label[for="rd1"]::before,
+  input[id="rd3"]:checked~.left label[for="rd2"]::before,
+  input[id="rd4"]:checked~.left label[for="rd3"]::before,
+  input[id="rd5"]:checked~.left label[for="rd4"]::before {
+    z-index: 20;
+  }
+
+  .right label::after {
+    content: '>';
+    background-color: gray;
+    width: 25px;
+    line-height: 50px;
+    position: absolute;
+    right: 0px;
+  }
+
+  input[id="rd1"]:checked~.right label[for="rd2"]::after,
+  input[id="rd2"]:checked~.right label[for="rd3"]::after,
+  input[id="rd3"]:checked~.right label[for="rd4"]::after,
+  input[id="rd4"]:checked~.right label[for="rd5"]::after,
+  input[id="rd5"]:checked~.right label[for="rd1"]::after {
+    z-index: 20;
+  }
+
+  input {
+    position: relative;
+    left: 70px;
+    bottom: -90px;
+    z-index: 300;
+  }
+
+  input:checked+*+*+*+*+img {
+    left: 0px;
+  }
+</style>
+
+<body>
+  <section>
+    <input type="radio" name="silder" id="rd1" checked>
+    <input type="radio" name="silder" id="rd2">
+    <input type="radio" name="silder" id="rd3">
+    <input type="radio" name="silder" id="rd4">
+    <input type="radio" name="silder" id="rd5">
+    <img
+      src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0973f3bcb983e63152829e97c0ca3795.jpg?thumb=1&w=1226&h=460&f=webp&q=90"
+      alt="">
+    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/17995511aa691be2679e8d5e3e85bd8d.jpg?w=2452&h=920" alt="">
+    <img
+      src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ad84d80e7fc5990162a387a6b103af01.jpeg?thumb=1&w=1226&h=460&f=webp&q=90"
+      alt="">
+    <img
+      src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e52c3e98602b90f198ec316dce253cba.jpg?thumb=1&w=1226&h=460&f=webp&q=90"
+      alt="">
+    <img
+      src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/05bc8af40fc9f9941808d253034c279d.jpg?thumb=1&w=1226&h=460&f=webp&q=90"
+      alt="">
+    <div class="box">
+      <label for="rd1"></label>
+      <label for="rd2"></label>
+      <label for="rd3"></label>
+      <label for="rd4"></label>
+      <label for="rd5"></label>
+    </div>
+    <div class="left">
+      <label for="rd1"></label>
+      <label for="rd2"></label>
+      <label for="rd3"></label>
+      <label for="rd4"></label>
+      <label for="rd5"></label>
+    </div>
+    <div class="right">
+      <label for="rd1"></label>
+      <label for="rd2"></label>
+      <label for="rd3"></label>
+      <label for="rd4"></label>
+      <label for="rd5"></label>
+    </div>
+
+  </section>
+</body>
+
+</html>
