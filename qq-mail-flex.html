@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* qq邮箱flex1-2布局 */
+    header {
+      display: flex;
+      width: 100%;
+      height: 50px;
+      background-color: red;
+    }
+
+    section {
+      display: flex;
+      height: 200px;
+      width: 100%;
+    }
+
+    aside {
+      width: 50px;
+      background-color: green;
+    }
+
+    main {
+      flex-grow: 1;
+      /* 主轴剩余空间全部分配给main*/
+      background-color: blue;
+    }
+
+    /* qq 邮箱flex1-1-1布局 */
+    div {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .a {
+      width: 100%;
+      height: 50px;
+      background-color: #fff;
+    }
+
+    .b {
+      width: 30%;
+      height: calc(100vh - 50px);
+      /*高度占据剩余空间*/
+      background-color: pink;
+    }
+
+    .c {
+      flex-grow: 1;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- qq邮箱flex1-2布局 -->
+  <header>header</header>
+  <section>
+    <aside>aside</aside>
+    <main>main</main>
+  </section>
+  <hr>
+  <!-- qq 邮箱flex1-1-1布局-->
+  <div>
+    <div class="a">header</div>
+    <div class="b">aside</div>
+    <div class="c">main</div>
+  </div>
+</body>
+
+</html>
