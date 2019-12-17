@@ -6,87 +6,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    /* flex布局利用在主轴，侧轴的对齐方式 */
+    .a {
+      display: flex;
+      background-color: pink;
+      height: 200px;
+      /* 必须有高度 */
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    header {
+      background-color: red;
+      width: 50px;
+      height: 50px;
+    }
+
+    /* flex布局，子元素设置margin为auto */
+    .b {
+      background-color: green;
+      display: flex;
+      height: 200px;
+      /* 必须有高度 */
+    }
+
+    main {
+      margin: auto;
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+
+    /* flex布局，设置元素在主轴剩余空间的分配，交叉轴自身居中 */
+    .e {
+      display: flex;
+      background-color: green;
+      height: 200px;
+      /* width: 200px; */
+      justify-content: space-around;
+      /*(justify-content: center;)*/
+    }
+
+    .ee {
+      background-color: pink;
+      align-self: center;
+    }
+
+    /* flex布局 设置交叉轴元素折行且居中，主轴剩余空间用space-around */
+    .f {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: green;
+      height: 200px;
+      /* width: 200px; */
+      align-content: center;
+      justify-content: space-around;
+    }
+
+    .ff {
+      background-color: pink;
+
+    }
+
+    /*flex布局子元素的宽高超过父元素的宽高居中  */
+    .g {
+      margin: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      width: 200px;
+      height: 200px;
+      background-color: #fff;
+      justify-content: center;
+      align-content: space-around;
+      border: 5px solid;
+
+    }
+
+    .gg {
+      width: 250px;
+      height: 250px;
+      background-color: pink;
+      opacity: 0.3;
+      flex-shrink: 0;
+    }
+  </style>
 </head>
-<style>
-  div {
-    padding: auto;
-    margin: auto;
-    width: 400px;
-    border: 3px solid blue;
-  }
-
-  .a {
-    display: inline-block;
-    width: 200px;
-    height: 100px;
-    margin: 100px;
-  }
-
-  .b {
-    padding: 0;
-    margin: 0;
-    width: 400px;
-    height: 300px;
-    border: 3px solid pink;
-    position: relative;
-  }
-
-  nav {
-    position: absolute;
-    border: 2px solid red;
-    text-align: center;
-    line-height: 100px;
-    top: 0px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-
-  }
-
-  .c {
-    margin: 0;
-    padding: 0;
-    width: 400px;
-    height: 300px;
-    position: relative;
-    border: 3px solid green;
-  }
-
-  .d {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 50%;
-    left: 50%;
-    margin-left: -50px;
-    margin-top: -50px;
-    background-color: blue;
-    border: 3px solid red;
-  }
-
-  main {
-    text-align: center;
-  }
-</style>
 
 <body>
-  <div class="g">
-    <main>
-      <img class="a"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoaSyZL0BojNIrj2Gnd9T5RTvgyRR3aAq6UVazqKq9RH4g6voO8g&s"
-        alt="">
-      <span>lream </span>
-    </main>
-    <div class="b">
-      <nav>中间</nav>
-    </div>
-    <div class="c">
-      <span class="d"></span>
-    </div>
+  <!-- 实现水平垂直居中 -->
+  <!--  flex布局利用在主轴，侧轴的对齐方式  -->
+  <div class="a">
+    <header></header>
   </div>
+  <hr>
+  <!--  flex布局，子元素设置margin为auto  -->
+  <div class="b">
+    <main></main>
+  </div>
+  <hr>
+  <!-- flex布局 -->
+  <div class="e">
+    <div class="ee">ccccccc</div>
+  </div>
+  <hr>
+  <!-- flex布局各个属性组合 -->
+  <div class="e">
+    <div class="ee">cccccccrerrrrrrrrrrrrrrr</div>
+  </div>
+  <!-- flex布局子元素的宽高超过父元素的宽高居中 -->
+  <div class="g">
+    <div class="gg"></div>
+  </div>
+
 </body>
 
 </html>
