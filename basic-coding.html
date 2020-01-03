@@ -577,10 +577,10 @@
     if ((y - x) > 0.05) {
       console.log("better")
     }
-    if ((x - y) > 0.05) {
+    else if ((x - y) > 0.05) {
       console.log("worse")
     }
-    if ((x - y) < 0.05) {
+    else if ((x - y) < 0.05) {
       console.log("same")
     }
   }
@@ -769,7 +769,7 @@
     }
     sum += x + y
   }
-  console.log(sum)
+  console.log(sum.toFixed(4))
 </script>
 <script id="ch0105/34" type="x">
   var n = Number(prompt())
@@ -900,13 +900,13 @@
   var j
   for (j = 2; ; j++) {
     if ((j % 2 != 0 || j == 2) && (j % 3 != 0 || j == 3) && (j % 5 != 0 || j == 5) && (j % 7 != 0 || j == 7)) {
-      console.log(j)
       i = i + 1
     }
     if (i == n) {
       break
     }
   }
+  console.log(j)
 </script>
 <script id="ch0105/45" type="x">
   var n = Number(prompt())
@@ -922,4 +922,64 @@
     t = t - 1
   }
   console.log(sum)
+</script>
+<script id="7" type="x">
+  var n = Number(prompt())
+  m = n
+  m = m % 10
+  if (n % 7 == 0 && m == 7) {
+    console.log("YES")
+  }
+  else {
+    console.log("NO")
+  }
+</script>
+<script id="sort" type="x">
+  var x = Number(prompt())
+  var y = Number(prompt())
+  var z = Number(prompt())
+  if (x > y && y > z) {
+    console.log(x, y, z)
+  }
+  if (x > z && y < z) {
+    console.log(x, z, y)
+  }
+  if (y > x && x > z)
+    console.log(y, x, z)
+  if (y > z && z > x) {
+    console.log(y, z, x)
+  }
+  if (z > x && x > y) {
+    console.log(z, x, y)
+  }
+  if (z > y && y > x) {
+    console.log(z, y, x)
+  }
+</script>
+<script id="narcissistic" type="x">
+  var n = Number(prompt())
+  var a = parseInt(n / 100)
+  var b = parseInt(n % 100 / 10)
+  var c = n % 10
+  if (n == Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3)) {
+    console.log("YES")
+  }
+  else {
+    console.log("NO")
+  }
+</script>
+<script id="narcissistics" type="x">
+  var n = Number(prompt())
+  for (var i = 99; i < n; i++) {
+    var a = parseInt(i / 100)
+    var b = parseInt(i % 100 / 10)
+    var c = i % 10
+    if (i == Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3)) {
+      console.log(i)
+    }
+  }
+</script>
+<script type="x">
+  var n = Number(prompt())
+
 </script>
