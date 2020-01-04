@@ -160,9 +160,9 @@
   var s = n.charCodeAt()
   if (s % 2 == 0) {
 
-    console.log("no")
+    console.log("NO")
   }
-  console.log("yes")
+  console.log("YES")
 </script>
 <script id="ch0104/05" type="x">
   var x = Number(prompt("enter a number", ""))
@@ -384,7 +384,7 @@
     console.log(x2 = x3.toFixed(5) + '-' + x4)
   }
 </script>
-<script id="ch0104/20" type="x">
+<script id="ch0104/21" type="x">
   var n = Number(prompt("enter a number", ""))
   var x = Number(prompt("enter a number", ""))
   var y = Number(prompt("enter a number", ""))
@@ -419,7 +419,7 @@
   for (i = 1; i <= n; i++)
     sum = sum + (+prompt(''))
   ave = sum / n
-  console.log(sum.toFixed(2))
+  console.log(sum)
   console.log(ave.toFixed(5))
 </script>
 <script id="ch0105/05" type="x">
@@ -618,17 +618,41 @@
 </script>
 <script id="ch0105/21" type="x">
   var N = Number(prompt())
-  var S = 0
-  while (S == 1) {
+  while (N != 1) {
     if (N % 2 != 0) {
-      console.log(N * 3 + 1)
+      console.log('N * 3 + 1 =' + N * 3 + 1)
+      N = N * 3 + 1
     }
-    else if (N % 2 == 0) {
+    else {
+      console.log('  N / 2 + =' + N / 2)
       N = N / 2
-      S = N
     }
-    else if (S == 1)
-      console.log("end")
+  }
+  console.log("end")
+</script>
+<script id="ch0105/22" type="x">
+  var sign = -1
+  var save = 0 // 手中余额
+  var stock = 0 // 存入妈妈手中的钱
+  var temp
+  for (var i = 1; i <= 12; i++) {
+    save = save + 300 //第一个月初手里的余额
+    var buget = +prompt()
+    // 如果每月花销大于手中余额
+    if (buget > save) {
+      console.log(i * sign)
+      break
+    }
+    save = save - buget  // 余额等于每个月总数减去每个月花销
+    //如果余额大于100 存入妈妈手中
+    if (save > 100) {
+      stock += parseInt(save / 100) * 100
+      save = save - parseInt(save / 100) * 100
+    }
+    if (i == 12) {
+      stock = save + stock * 1.2
+      console.log(stock)
+    }
   }
 </script>
 <script id="ch0105/23" type="x">
@@ -664,6 +688,19 @@
     }
   }
   console.log(j)
+</script>
+<script id="ch0105/25" type="x">
+
+  for (var i = 100; i <= 900; i++) {
+    var a7 = i % 7
+    var b7 = (i - a7) / 7 % 7
+    var c7 = (i - a7 - b7 * 7) / 7 / 7 % 7
+    var a9 = i % 9
+    var b9 = (i - a9) / 9 % 9
+    var c9 = (i - a9 - b9 * 9) / 9 / 9 % 9
+    if (a7 == c9 && c7 == a9 && b7 == b9)
+      console.log(i, '' + a7 + b7 + c7, '' + a9 + b9 + c9)
+  }
 </script>
 <script id="ch0105/26" type="x">
   var n = Number(prompt())
@@ -705,16 +742,16 @@
   b = parseInt(K % 100 / 10)
   c = (parseInt(K / 100))
   if (K < 0 && a == 0) {
-    console.log('-', Math.abs(b), Math.abs(c))
+    console.log('' + '-' + Math.abs(b) + Math.abs(c))
   }
   if (K < 0 && a != 0) {
-    console.log('-', Math.abs(a), Math.abs(b), Math.abs(c))
+    console.log('' + '-' + Math.abs(a) + Math.abs(b) + Math.abs(c))
   }
   if (K > 0 && a == 0) {
-    console.log(b, c)
+    console.log('' + b + c)
   }
   if (K > 0 && a != 0) {
-    console.log(a, b, c)
+    console.log('' + a + b + c)
   }
 </script>
 <script id="ch0105/30" type="x">
@@ -740,9 +777,20 @@
     console.log("No")
 </script>
 <script id="ch0105/31" type="x">
-  var N = Number(prompt())
-  var M = Number(prompt())
-  var s = -1
+  var n = Number(prompt())
+  var m = Number(prompt())
+  for (var i = 1; i <= n; i++) {
+    var flag = true
+    for (var p = 1; p <= m && p <= i; p++) {
+      if (i % p == 0) {
+        flag = !flag
+      }
+    }
+    if (flag == false) {
+      console.log(i)
+    }
+  }
+
 </script>
 
 <script id="ch0105/32" type="x">
@@ -807,6 +855,26 @@
   for (var x = 1; x <= X; x++)
     N += Math.floor(M / N)
   console.log(N)
+</script>
+<script id="ch0105/38" type="x">
+  var m = +prompt()
+  for (var i = 1; i <= m; i++) {
+    var n = +prompt()
+    var a = []
+    for (var j = n; j >= 0; j--) {
+      var c = +prompt()
+      if (j !== 0) {
+        a.push(n * c)
+      }
+    }
+    if (j === 0) {
+      console.log(0)
+    }
+    else {
+      console.log(a.join(" "))
+    }
+  }
+
 </script>
 <script id="ch0105/39" type="x">
   var n = Number(prompt())
@@ -981,5 +1049,4 @@
 </script>
 <script type="x">
   var n = Number(prompt())
-
 </script>
