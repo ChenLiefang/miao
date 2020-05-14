@@ -53,5 +53,12 @@ var chenliefang = {
       * @param{array} 原数组
       * @param{...values} 其余数组
       * @return {array[][]} 返回过滤后的数组
-      */
+      */,
+     drop:function(array , n=1){
+         let result = []
+         for(var i = n ;i < array.length; i++){
+             result.push(aray[i])
+         }
+         return result 
+     } 
 }
