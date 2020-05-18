@@ -208,20 +208,115 @@ var chenliefang = {
       * @return{*} array数组的第N个元素
       */,
      pull:function(array , ...values){
-          let ans = []
-          for(let i = 0; i < array.length;i++){
-              if(value != array[i]){
-                  ans.push = array[i]
-
+          for(let x of values){
+              for(let i = 0;i <array.length;i++){
+                  if(array[i] === x){
+                      array.splice(i,1)
+                  }
               }
-              return ans
-          }
-
+          } 
+          return array
+ 
      }
      /**
       * 移除数组中和给定元素相等的值
       * @param{array} 要修改的数组
       * @param{...values}要删除的值
       * @return{array} 返回数组
-      */
-}
+      */,
+     slice:function(array,start = 0,end = array.length){
+         let result = []
+         for(let i = start ; i < end ; i++){
+             result.push(array[i])
+         }
+         return result 
+
+     }
+     /**
+      * 裁剪数组array,从start开始end结束，但是不包括end
+      * @param{array} 要裁剪的数组
+      * @param{number} 开始位置
+      * @param{number} 结束位置
+      * @return{array} 返回数组裁剪部分  
+      */,
+      reverse:function(array){
+          for(let i = array.length;i>0 ;i--){
+              array.push(array[i])
+          }
+          return array
+
+      }
+      /**
+       * 反转array,使得第一个元素变成最后一个，第二个变成倒数第二，以此类推
+       * @param {array} 要修改的数组
+       * @return {array} 返回array
+       */,
+       sortedIndex(array, value){
+           for(let i = 0 ; i < array.length ; i++ ){
+               if(array[i] >= value){
+                   return i
+               }
+           }
+           return array.length
+
+       }
+       /**
+        * 使用二进制的方式检索来决定value值应该插入到数组中尽可能小的索引位置，以保证array的排序
+        * @param {array} 要检查的排序数组
+        * @param {value} 要评估的值
+        * @return {number} 返回 value值应该在数组array中插入的索引位置index
+        */,
+        union:function(array){
+            var result = [] ;
+            for(let i of array){
+                if(!result.include(i)){
+                    result.push(i) ; 
+                }
+            }
+            return result ;
+        }
+        /**
+         * 创建一个按顺序排列的唯一值得数组
+         * @param {array} 要检查的数组
+         * @return {array} 返回一个新的联合数组
+         */,
+         unzip:function(array){
+            let res = []
+            for(let i = 0; i < array[0].length ; i++){ //array[0].length 获取列数
+                res[i] = []
+                for (let j = 0; j< array.length ; j++){ // array.length 获取行数
+                    res[i][j] = array[j][i]
+
+                }
+            }
+            return res;
+
+         }
+         /**
+          * 除了它接收分组元素的数组，并且创建一个数组，分组元素到打包前的结构
+          * @param {} 要处理的分组元素
+          * @return {} 返回重组元素的新数组
+          */,
+          without:function(array,...values){
+              let res = []
+              for ( let i of array){
+                  if(!values.includes(i)){
+                      res.push(i)
+                  }
+              }
+              return res;
+
+          }
+          /**
+           * 创建一个剔除所有给定值得新数组，返回一个新数组
+           * @param {array} 要检查的数组
+           * @param {values} 要剔除的值
+           * @return {array} 返回过滤后法人新数组
+           */,
+           xor:function(...array){
+               let res = []
+               
+
+           }
+
+} 
