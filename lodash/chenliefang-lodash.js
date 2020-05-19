@@ -240,8 +240,11 @@ var chenliefang = {
       * @return{array} 返回数组裁剪部分  
       */,
       reverse:function(array){
-          for(let i = array.length;i>0 ;i--){
-              array.push(array[i])
+          for(let i = 0 , j = array.length - 1;i < j ;i ++){
+              let temp = array[i]
+              array[i] = array [j]
+              array[j] = temp
+              j--
           }
           return array
 
@@ -268,10 +271,13 @@ var chenliefang = {
         */,
         union:function(array){
             var result = [] ;
-            for(let i of array){
-                if(!result.include(i)){
-                    result.push(i) ; 
+            for(let i of array) {
+                for(let j of array[i]) {
+                  if(!result.includes(j)) {
+                    result.push(j)
+                }   
                 }
+                
             }
             return result ;
         }
@@ -315,8 +321,46 @@ var chenliefang = {
            */,
            xor:function(...array){
                let res = []
+               for ( let i of array){
+                   for (let j of i){
+                        if(!res.includes(j)){
+                    res.push(j)
+                }
+                   }
                
-
+            }
+            return res
            }
+           /**
+            * 得到非交集
+            * @param {array} 要检查的数组
+            * @return {array} 返回过滤后的新数组
+            * 
+            */,
+            zip:function(...array){
+                let res = []
+                let max = 0
+                for(let x of array){
+                    if(max < x.length){
+                        max = x.length
+                    }
+                } 
+                for(let i = 0; i < max ; i++){ 
+                    let temp = []
+                    for (let j = 0; j< array.length ; j++){ 
+                        temp.push(array[j][i] ) 
+    
+                    }
+                    res.push(temp)
+                }
+                return res;
+
+            }
+            /**
+             * 创建一个分组元素的数组，数组的第一个元素包含所给定数组的第一个元素，数组的第二个元素，包含给定数组的第二个元素，以此类推
+             * @param {arrays} 要处理的数组
+             * @return {Array} 返回分组元素的新数组
+             */
+            
 
 } 
