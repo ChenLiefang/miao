@@ -360,7 +360,115 @@ var chenliefang = {
              * 创建一个分组元素的数组，数组的第一个元素包含所给定数组的第一个元素，数组的第二个元素，包含给定数组的第二个元素，以此类推
              * @param {arrays} 要处理的数组
              * @return {Array} 返回分组元素的新数组
-             */
+             */,
+             eq:function(value,other){
+                 if(value !== value && other !==other){
+                     return true
+                 }
+                return value === other
+             }
+             /**
+              * 比较两者的值，确定他们是否相等
+              * @param {value} 要比较的值
+              * @param {other} 另一个要比较的值
+              * @return {boolean} 返回true or false
+              */,
+              gt:function(value, other){
+                  if(value > other){
+                      return true
+                  }
+                  return false
+              }
+              /**
+               * 检查value的值是否大于other，如果value 大于 other 返回 true，否则返回 false。
+               */,
+               gte:function(value, other){
+                if(value >= other){
+                    return true
+                }
+                return false
+            }
+            /**
+             * 检查value的值是否大于等于other，如果value 大于 other 返回 true，否则返回 false。
+             */,
+             isArguments:function(value){
+                 if(!Array.isArray(value) && typeof value =="object" && value.length !== undefined){
+                     return true
+
+                 }
+                 return false
+
+             }
+             /**
+              * 检查value是否是一个类arguement对象 
+              */,
+              isNaN:function(value){
+                  if(typeof value == 'object'){
+                      return value.toString() == 'NaN'
+                  }
+                  return value !== value 
+              }
+              /**
+               * 检查 value 是否是 NaN
+               * @param {value} 要检查的值
+               * @return {boolean} 如果是返回真否则返回假
+               */,
+               isNull:function(value){
+                if(value == null){
+                    return true
+                }else{
+                    return false
+                }
+               }
+               /**
+                * 检查value的值是不是null
+                */,
+                it:function(value, other){
+                    if(value < other){
+                        return true
+                    }
+                    return false
+                }
+                 /**
+               * 检查value的值是否小于other，如果value 大于 other 返回 true，否则返回 false。
+               */,
+               ite:function(){
+                if(value <= other){
+                    return true
+                }
+                return false
+               }
+                /**
+               * 检查value的值是否小于等于other，如果value 大于 other 返回 true，否则返回 false。
+               */,
+               add:function(augend,addend ){
+                   return augend + addend
+               }
+               /**
+                * 两个数相加
+                */,
+               ceil:function(n,p= 0){
+                   let temp = n * Math.pow(10,p)
+                   if(temp - parseInt(temp) > 0){
+                       temp = parseInt + 1  
+                   }
+                   else{
+                       temp = parseInt(temp)
+                   }
+                   let f = p 
+                   if(p < 0){
+                       f = -p
+                   }
+                   return parseInt(temp) / Math.pow(10,p)
+               }
+               /**
+                * 根据 precision（精度） 向上舍入 number。（注： precision（精度）可以理解为保留几位小数。）
+                * @param {number}  要向上舍入的值
+                * @param {number} 向上舍入的精度
+                * @return {number} 返回向上舍入的值
+                */
+
+               
             
 
 } 
