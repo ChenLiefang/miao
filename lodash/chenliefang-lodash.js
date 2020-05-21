@@ -450,7 +450,7 @@ var chenliefang = {
                ceil:function(n,p= 0){
                    let temp = n * Math.pow(10,p)
                    if(temp - parseInt(temp) > 0){
-                       temp = parseInt + 1  
+                       temp = parseInt(temp) + 1  
                    }
                    else{
                        temp = parseInt(temp)
@@ -466,7 +466,73 @@ var chenliefang = {
                 * @param {number}  要向上舍入的值
                 * @param {number} 向上舍入的精度
                 * @return {number} 返回向上舍入的值
-                */
+                */,
+                divide:function(dividend,divisor){
+                    return dividend / divisor
+                }
+                /**
+                 * 两个数相除
+                 * @param {number} 相除的第一个数
+                 * @param {number} 相除的第二个数
+                 * @return {number} 返回商数
+                 */,
+                 floor:function(n,p = 0){
+                     let exp = 10 ** -p
+                     return n - (n % exp)
+                 }
+                /**
+                  * 根据 precision（精度） 向下舍入 number。（注： precision（精度）可以理解为保留几位小数。）
+                  * @return {number} 向下舍入的值
+                */,
+                  max:function(array){
+                      if(!array || array.length == 0 )
+                      return undefined
+                      let max= array[0]
+                      for(let i = 0; i < array.length;i++){
+                          if(max < array[i]){
+                              max = array[i]
+                          }
+                      }
+                      return max
+                  }
+                /**
+                   * 计算 array 中的最大值。 如果 array 是 空的或者假值将会返回 undefined。
+                */,
+                mean:function(array){
+                    let sum = array[0]
+                    for(let i = 0;i < array.length ;i++){
+                        sum = sum + array[i]
+                    }
+                    return sum / i
+
+                }
+                /**
+                 * 计算Array的平均值
+                 */,
+                min:function(array){
+                    if(!array || array.length == 0 )
+                    return undefined
+                    let min= array[0]
+                    for(let i = 0; i < array.length;i++){
+                        if(min > array[i]){
+                            min = array[i]
+                        }
+                    }
+                    return min
+
+                }
+                /**
+                 * 计算Array的最小值
+                 */,
+                multiply:function(multiplier,multiplicand){
+                    return multiplier * multiplicand
+                 }
+                /**
+                 * 两个数相乘
+                 */
+
+                
+
 
                
             
