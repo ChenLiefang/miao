@@ -535,7 +535,7 @@ var chenliefang = {
          */
         ,
     mean: function(array) {
-            let sum = array[0]
+            let sum = 0
             for (let i = 0; i < array.length; i++) {
                 sum = sum + array[i]
             }
@@ -570,9 +570,60 @@ var chenliefang = {
          */
         ,
     round: function(number, precision = 0) {
+            let ans = Math.pow(10, precision) * number
+            ans = Math.round(ans)
+            ans /= Math.pow(10, precision)
+            return ans
+        }
+        /**
+         *根据precision 精度，四舍五入
+         */
+        ,
+    subtract: function(minuend, subtrahend) {
+            return minuend - subtrahend
+        }
+        /**
+         * 两数相减
+         */
+        ,
+    sum: function(array) {
+            let sum = 0
+            for (let i of array) {
+                sum += i
+            }
+            return sum
+
+        }
+        /**
+         * 计算Array值的总和
+         */
+        ,
+    defaults: function(object, ...sources) {
+            for (let i of sources) { //遍历source这个数组，i是对象的值
+                for (let j in i) { //遍历i这个对象值，得到对应属性名j
+                    if (!(j in object)) { //判断 j 的属性名是否在object 这个对象里面
+                        object[j] = i[j] // 如果j 里面没有这个属性名，通过这个方法可增加一个属性名
+
+                    }
+                }
+            }
+            return object
+        }
+        /**
+         *分配来源对象到目标对象上，来源对象从左到右，一旦设置了相同属性的值，后续的值将被忽略
+         @param {object} 目标对象
+         @param {sources} 来源对象
+         @return {object} object的值将被改变
+         */
+        ,
+    values: function(object) {
+        let arr = []
+
 
 
     }
+
+
 
 
 
