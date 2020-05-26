@@ -272,22 +272,118 @@ var chenliefang = {
          * @return {array} 返回array
          */
         ,
-    sortedIndex(array, value) {
-        for (let i = 0; i < array.length; i++) {
-            if (array[i] >= value) {
-                return i
+    sortedIndex: function(array, value) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] >= value) {
+                    return i
+                }
+            }
+            return array.length
+
+        }
+        /**
+         * 使用二进制的方式检索来决定value值应该插入到数组中尽可能小的索引位置，以保证array的排序
+         * @param {array} 要检查的排序数组
+         * @param {value} 要评估的值
+         * @return {number} 返回 value值应该在数组array中插入的索引位置index
+         */
+        ,
+    sortedIndexOf: function(array, value) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] == value || (array[i] !== array[i] && value !== value)) {
+                    return i
+                }
             }
         }
-        return array.length
+        /**
+         * 在已经排序的数组上进行二进制检索
+         * @param {Array} 要检索的数组
+         * @param {value} 要检索的值
+         * @return {number} 返回匹配值的索引最小位置 
+         */
+        ,
+    sortedLastIndex: function(array, value) {
+            for (let i = array.length; i > 0; i--) {
+                if (array[i] == value || (array[i] !== array[i] && value !== value)) {
+                    return i + 1
+                }
+            }
+        }
+        /**
+         * 在已经排序的数组上进行二进制检索
+         * @param {Array} 要检索的数组
+         * @param {value} 要检索的值
+         * @return {number} 返回匹配值的索引最小位置 
+         */
+        ,
+    sortedLastIndexOf: function(array, value) {
+            for (let i = array.length; i > 0; i--) {
+                if (array[i] == value || (array[i] !== array[i] && value !== value)) {
+                    return i
+                }
+            }
+        }
+        /**
+         * 在已经排序的数组上进行二进制检索
+         * @param {Array} 要检索的数组
+         * @param {value} 要检索的值
+         * @return {number} 返回匹配值的索引位置 
+         */
+        ,
+    sortedUniq: function(array) {
+            let ary = []
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] !== array[i + 1]) {
+                    ary.push(array[i])
+                }
+            }
+            return ary
+        }
+        /**
+         * @param {array} 要检查的数组
+         * @return {array} 返回一个新的不重复的数组
+         */
+        ,
+    tail: function(array) {
+            let ary = []
+            for (let i = 0; i < array.length; i++) {
+                ary.push(array[i + 1])
+            }
+            return ary
 
-    }
-    /**
-     * 使用二进制的方式检索来决定value值应该插入到数组中尽可能小的索引位置，以保证array的排序
-     * @param {array} 要检查的排序数组
-     * @param {value} 要评估的值
-     * @return {number} 返回 value值应该在数组array中插入的索引位置index
-     */
-    ,
+        }
+        /**
+         * 获取除了第一个元素以外的全部数组
+         */
+        ,
+    take: function(array, n = 1) {
+            let res = []
+            for (let i = 0; i < Math.min(n, array.length); i++) {
+                res.push(array[i])
+            }
+            return res
+        }
+        /**
+         * 创建一个数组切片，从array数组的起始元素开始提取n个元素。
+         * @param {array} 要检索的数组
+         * @param {number} 要提取法的元素个数
+         * @return {array} 要返回的数组
+         */
+        ,
+    takeRight: function(array, n = 1) {
+            let res = []
+            for (let i = Math.max(0, array.length - n); i < array.length; i++) {
+                res.push(array[i])
+            }
+            return res
+        }
+        /**
+         * 创建一个数组切片，从array数组的最后一个元素开始提取n个元素
+         * @param {array} 要检索的数组
+         * @param {number} 要提取法的元素个数
+         * @return {array} 要返回的数组
+         */
+        ,
     union: function(array) {
             var result = [];
             for (let i of array) {
@@ -616,12 +712,8 @@ var chenliefang = {
          @return {object} object的值将被改变
          */
         ,
-    values: function(object) {
-        let arr = []
 
 
-
-    }
 
 
 
