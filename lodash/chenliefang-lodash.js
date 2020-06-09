@@ -1,4 +1,99 @@
 var chenliefang = {
+    befor: function(n, func) {
+        var i = 0
+        return function(...args) {
+            var result
+            i++
+            if (i < n) {
+                return func(...args)
+            }
+            return result
+
+        }
+
+    },
+    after: function(n, func) {
+        var i = 0
+        return function(...args) {
+            i++
+            if (i > n) {
+                return func(...args)
+            }
+        }
+    },
+    ary: function(func, n = func.length) {
+        return function(...args) {
+            return func(...args.slice(0, n))
+        }
+
+    },
+    /**
+     * 创建一个调用func 函数，调用func时最多接受n个参数，其他的忽略
+     */
+    unary: function(func) {
+        return function(args) {
+            return func(args)
+        }
+    },
+    /**
+     * 创建一个调用func 函数，调用func时接收1个参数
+     */
+    flip: function() {
+        return function(...args) {
+            return func(...args.reverse())
+        }
+
+    },
+    /**
+     * 创建一个函数，调用funnc 时候接受翻转的参数
+     */
+    negete: function(func) {
+        return function(...args) {
+            return !func(...args)
+        }
+    },
+    /*
+     *创建一个针对断言函数 func 结果取反的函数
+     */
+    reject: function(ary, test) {
+        return filter(ary, negete(test))
+    },
+    /** 
+     * 
+     */
+    some: function(ary, test) {
+        return !every(ary, negete(test))
+
+    },
+    spread: function(func) {
+        return function(ary) {
+            return func(...ary)
+        }
+    },
+    /** 
+     * 
+     *创建一个函数，调用func时,以数组的形式接入参数
+     */
+    bind: function(f, ...fixedArgs) {
+        return function(...args) {
+            var copy = FixedArgs.slice()
+            var i = 0
+            var j = 0
+
+            // 双指针  注意copy原来的数组 
+            for (i = 0; i < copy.length; i++) {
+                if (copy[i] === null) {
+                    copy[i] = args[j++]
+                }
+            }
+            while (j < args.length) {
+                copy.push(args[j++])
+            }
+            return f(...copy)
+
+        }
+
+    },
     chunk: function(array, size) {
             let ary = []
             for (var i = 0; i < array.length; i += size) {
